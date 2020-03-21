@@ -13,15 +13,13 @@ namespace iRecipt
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ReciptPage : ContentPage
     {
-        Image image;
+        private Image image;
 
         public ReciptPage()
         {
             InitializeComponent();
-
             ChooseRecipt.Clicked += OnPickPhotoButtonClicked;
-
-            
+            AddMembers.Clicked += (s, e) => Navigation.PushAsync(new AddMembersPage());
         }
 
         async void OnPickPhotoButtonClicked(object sender, EventArgs e)
@@ -31,10 +29,14 @@ namespace iRecipt
             Stream stream = await DependencyService.Get<ImageUpload>().GetImageStreamAsync();
             if (stream != null)
             {
+                image = new Image();
                 image.Source = ImageSource.FromStream(() => stream);
             }
 
-                (sender as Button).IsEnabled = true;
+            (sender as Button).IsEnabled = true;
+            AddMembers.IsEnabled = true;
+            ReciptImage.Source = image.Source;
         }
+
     }
 }
