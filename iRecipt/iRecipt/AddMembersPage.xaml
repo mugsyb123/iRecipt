@@ -6,10 +6,16 @@
              mc:Ignorable="d"
              x:Class="iRecipt.AddMembersPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Add members to the check" FontSize="Title" HorizontalOptions="CenterAndExpand" 
-              VerticalOptions="CenterAndExpand"/>
-            <Entry/>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <Label Text="Add members to the check" FontSize="Title" HorizontalOptions="CenterAndExpand" 
+                  VerticalOptions="CenterAndExpand"/>
+
+                <StackLayout x:Name="MemberStack" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+                <Button Text="Add" x:Name="AddEntry" HorizontalOptions="CenterAndExpand"/>
+                <Button Text="Split the Bill!" HorizontalOptions="CenterAndExpand" x:Name="SplitBill"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
