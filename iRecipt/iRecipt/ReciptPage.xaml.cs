@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iRecipt.backend;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,16 +28,28 @@ namespace iRecipt
             (sender as Button).IsEnabled = false;
 
             Stream stream = await DependencyService.Get<ImageUpload>().GetImageStreamAsync();
+
+            byte[] imageArray = null;
             if (stream != null)
             {
                 image = new Image();
-                image.Source = ImageSource.FromStream(() => stream);
+                
+                using(MemoryStream ms = new MemoryStream())
+                {
+                    stream.CopyTo(ms);
+                    imageArray = ms.ToArray();
+                }
+
+                //image.Source = ImageSource.FromStream(() => stream);
+                image.Source = ImageSource.FromStream(() => new MemoryStream(imageArray));
             }
 
             (sender as Button).IsEnabled = true;
             AddMembers.IsEnabled = true;
             ReciptImage.Source = image.Source;
-        }
 
+            //Sets image for processing
+            ImageProcessing.setImage(imageArray);
+        }
     }
 }

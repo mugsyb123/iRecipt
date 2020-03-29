@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -54,7 +52,7 @@ namespace iRecipt
             //Create a new entry for the UI stack
             Entry tempEntry = new Entry { Placeholder = placeholder, 
                 HorizontalOptions = LayoutOptions.FillAndExpand, 
-                WidthRequest = DeviceDisplay.MainDisplayInfo.Width * .65};
+                WidthRequest = (DeviceDisplay.MainDisplayInfo.Width * .25)};
 
             //Add the element to the stack
             MemberStack.Children.Add(tempEntry);

@@ -6,13 +6,15 @@
              mc:Ignorable="d"
              x:Class="iRecipt.ReciptPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Select a Recipt Image" FontSize="Title" HorizontalOptions="CenterAndExpand" 
-              VerticalOptions="CenterAndExpand"/>
-            <Image x:Name="ReciptImage" VerticalOptions="Center" HorizontalOptions="Center" Margin="60, 5, 60, 5"/>
-            
-            <Button HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" x:Name="ChooseRecipt"  Text="Choose a Recipt Image" />
-            <Button HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" x:Name="AddMembers" Text="Add Members >>" IsEnabled="False"/>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Select a Recipt Image" FontSize="Title" HorizontalOptions="CenterAndExpand" 
+                  VerticalOptions="CenterAndExpand"/>
+                <Image x:Name="ReciptImage" VerticalOptions="Center" HorizontalOptions="Center" Margin="60, 5, 60, 5"/>
+
+                <Button HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" x:Name="ChooseRecipt"  Text="Choose a Recipt Image" />
+                <Button HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" x:Name="AddMembers" Text="Add Members >>" IsEnabled="False"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

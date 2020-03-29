@@ -6,7 +6,9 @@
              mc:Ignorable="d"
              x:Class="iRecipt.SplitBillPage">
     <ContentPage.Content>
-        <StackLayout>
+
+        
+        <StackLayout IsVisible="False">
             <Label Text="Split the Bill!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
